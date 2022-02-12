@@ -1,0 +1,4 @@
+stm32wlxx_ll_bus.h:1303:22:LL_APB2_GRP1_EnableClock	24	static
+stm32wlxx_hal_timebase_tim.c:41:19:HAL_InitTick	64	static
+stm32wlxx_hal_timebase_tim.c:106:6:HAL_SuspendTick	4	static
+stm32wlxx_hal_timebase_tim.c:118:6:HAL_ResumeTick	4	static

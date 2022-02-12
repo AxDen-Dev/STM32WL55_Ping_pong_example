@@ -1,0 +1,2 @@
+app_freertos.c:56:13:PreSleepProcessing	16	static
+app_freertos.c:61:13:PostSleepProcessing	16	static

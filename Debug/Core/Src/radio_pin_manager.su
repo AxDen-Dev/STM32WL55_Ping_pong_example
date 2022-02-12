@@ -1,0 +1,6 @@
+radio_pin_manager.c:9:6:set_radio_pin_manager_rf_switch_vdd_pin	16	static
+radio_pin_manager.c:16:6:set_radio_pin_manager_rf_switch_vdd_pin_set	8	static
+radio_pin_manager.c:23:6:set_radio_pin_manager_rf_switch_vdd_pin_clear	8	static
+radio_pin_manager.c:30:6:set_radio_pin_manager_rf_switch_pin	16	static
+radio_pin_manager.c:37:6:set_radio_pin_manager_rf_switch_pin_set	8	static
+radio_pin_manager.c:43:6:set_radio_pin_manager_rf_switch_pin_clear	8	static

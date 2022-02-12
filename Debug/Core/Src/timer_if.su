@@ -1,0 +1,16 @@
+timer_if.c:100:21:TIMER_IF_Init	16	static
+timer_if.c:109:21:TIMER_IF_StartTimer	24	static
+timer_if.c:118:21:TIMER_IF_StopTimer	16	static
+timer_if.c:127:10:TIMER_IF_SetTimerContext	4	static
+timer_if.c:137:10:TIMER_IF_GetTimerContext	4	static
+timer_if.c:147:10:TIMER_IF_GetTimerElapsedTime	16	static
+timer_if.c:156:10:TIMER_IF_GetTimerValue	16	static
+timer_if.c:165:10:TIMER_IF_GetMinimumTimeout	16	static
+timer_if.c:174:10:TIMER_IF_Convert_ms2Tick	24	static
+timer_if.c:183:10:TIMER_IF_Convert_Tick2ms	24	static
+timer_if.c:192:6:TIMER_IF_DelayMs	16	static
+timer_if.c:199:10:TIMER_IF_GetTime	24	static
+timer_if.c:208:6:TIMER_IF_BkUp_Write_Seconds	16	static
+timer_if.c:215:6:TIMER_IF_BkUp_Write_SubSeconds	16	static
+timer_if.c:222:10:TIMER_IF_BkUp_Read_Seconds	16	static
+timer_if.c:231:10:TIMER_IF_BkUp_Read_SubSeconds	16	static

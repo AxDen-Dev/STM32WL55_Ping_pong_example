@@ -1,0 +1,3 @@
+stm32_mem.c:32:6:UTIL_MEM_cpy_8	32	static
+stm32_mem.c:43:6:UTIL_MEM_cpyr_8	32	static
+stm32_mem.c:55:6:UTIL_MEM_set_8	24	static

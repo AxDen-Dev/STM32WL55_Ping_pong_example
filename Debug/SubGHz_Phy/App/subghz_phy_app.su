@@ -1,0 +1,11 @@
+subghz_phy_app.c:169:6:SubghzApp_Init	56	static
+subghz_phy_app.c:208:6:PacketSendCallbackRegister	16	static
+subghz_phy_app.c:214:6:PacketRecviceCallbackRegister	16	static
+subghz_phy_app.c:220:6:SubghzApp_Sleep	8	static
+subghz_phy_app.c:226:6:SubghzApp_TX	16	static
+subghz_phy_app.c:232:6:SubghzApp_RX	16	static
+subghz_phy_app.c:247:13:OnTxDone	8	static
+subghz_phy_app.c:260:13:OnRxDone	48	static
+subghz_phy_app.c:293:13:OnTxTimeout	8	static
+subghz_phy_app.c:306:13:OnRxTimeout	24	static
+subghz_phy_app.c:320:13:OnRxError	24	static
