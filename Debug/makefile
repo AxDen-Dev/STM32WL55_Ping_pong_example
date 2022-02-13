@@ -71,8 +71,8 @@ all: main-build
 main-build: STM32WL55_Ping_pong_example.elf secondary-outputs
 
 # Tool invocations
-STM32WL55_Ping_pong_example.elf: $(OBJS) $(USER_OBJS) /Users/jangsangjin/STM32CubeIDE/workspace_1.6.0/STM32WL55CC_Ping_Pong_example/STM32WL55CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32WL55_Ping_pong_example.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/jangsangjin/STM32CubeIDE/workspace_1.6.0/STM32WL55CC_Ping_Pong_example/STM32WL55CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32WL55_Ping_pong_example.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32WL55_Ping_pong_example.elf: $(OBJS) $(USER_OBJS) /Users/jangsangjin/STM32CubeIDE/workspace_1.6.0/STM32WL55_Ping_pong_example/STM32WL55CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32WL55_Ping_pong_example.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/jangsangjin/STM32CubeIDE/workspace_1.6.0/STM32WL55_Ping_pong_example/STM32WL55CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32WL55_Ping_pong_example.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

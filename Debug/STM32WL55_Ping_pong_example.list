@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00031302  00000000  00000000  000a1ac0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000e249f  00000000  00000000  000d2dc2  2**0
+ 18 .debug_str    000e24f1  00000000  00000000  000d2dc2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  001b5261  2**0
+ 19 .comment      00000053  00000000  00000000  001b52b3  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000c8e4  00000000  00000000  001b52b4  2**2
+ 20 .debug_frame  0000c8e4  00000000  00000000  001b5308  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -4869,44 +4869,23 @@ void SystemApp_Init(void)
  800239e:	4770      	bx	lr
 
 080023a0 <_sbrk>:
- *
- * @param incr Memory size
- * @return Pointer to allocated memory
- */
-void *_sbrk(ptrdiff_t incr)
-{
  80023a0:	b580      	push	{r7, lr}
  80023a2:	b086      	sub	sp, #24
  80023a4:	af00      	add	r7, sp, #0
  80023a6:	6078      	str	r0, [r7, #4]
-  extern uint8_t _end; /* Symbol defined in the linker script */
-  extern uint8_t _estack; /* Symbol defined in the linker script */
-  extern uint32_t _Min_Stack_Size; /* Symbol defined in the linker script */
-  const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
  80023a8:	4a14      	ldr	r2, [pc, #80]	; (80023fc <_sbrk+0x5c>)
  80023aa:	4b15      	ldr	r3, [pc, #84]	; (8002400 <_sbrk+0x60>)
  80023ac:	1ad3      	subs	r3, r2, r3
  80023ae:	617b      	str	r3, [r7, #20]
-  const uint8_t *max_heap = (uint8_t *)stack_limit;
  80023b0:	697b      	ldr	r3, [r7, #20]
  80023b2:	613b      	str	r3, [r7, #16]
-  uint8_t *prev_heap_end;
-
-  /* Initialize heap end at first call */
-  if (NULL == __sbrk_heap_end)
  80023b4:	4b13      	ldr	r3, [pc, #76]	; (8002404 <_sbrk+0x64>)
  80023b6:	681b      	ldr	r3, [r3, #0]
  80023b8:	2b00      	cmp	r3, #0
  80023ba:	d102      	bne.n	80023c2 <_sbrk+0x22>
-  {
-    __sbrk_heap_end = &_end;
  80023bc:	4b11      	ldr	r3, [pc, #68]	; (8002404 <_sbrk+0x64>)
  80023be:	4a12      	ldr	r2, [pc, #72]	; (8002408 <_sbrk+0x68>)
  80023c0:	601a      	str	r2, [r3, #0]
-  }
-
-  /* Protect heap from growing into the reserved MSP stack */
-  if (__sbrk_heap_end + incr > max_heap)
  80023c2:	4b10      	ldr	r3, [pc, #64]	; (8002404 <_sbrk+0x64>)
  80023c4:	681a      	ldr	r2, [r3, #0]
  80023c6:	687b      	ldr	r3, [r7, #4]
@@ -4914,32 +4893,22 @@ void *_sbrk(ptrdiff_t incr)
  80023ca:	693a      	ldr	r2, [r7, #16]
  80023cc:	429a      	cmp	r2, r3
  80023ce:	d207      	bcs.n	80023e0 <_sbrk+0x40>
-  {
-    errno = ENOMEM;
  80023d0:	f00d fb52 	bl	800fa78 <__errno>
  80023d4:	4603      	mov	r3, r0
  80023d6:	220c      	movs	r2, #12
  80023d8:	601a      	str	r2, [r3, #0]
-    return (void *)-1;
  80023da:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
  80023de:	e009      	b.n	80023f4 <_sbrk+0x54>
-  }
-
-  prev_heap_end = __sbrk_heap_end;
  80023e0:	4b08      	ldr	r3, [pc, #32]	; (8002404 <_sbrk+0x64>)
  80023e2:	681b      	ldr	r3, [r3, #0]
  80023e4:	60fb      	str	r3, [r7, #12]
-  __sbrk_heap_end += incr;
  80023e6:	4b07      	ldr	r3, [pc, #28]	; (8002404 <_sbrk+0x64>)
  80023e8:	681a      	ldr	r2, [r3, #0]
  80023ea:	687b      	ldr	r3, [r7, #4]
  80023ec:	4413      	add	r3, r2
  80023ee:	4a05      	ldr	r2, [pc, #20]	; (8002404 <_sbrk+0x64>)
  80023f0:	6013      	str	r3, [r2, #0]
-
-  return (void *)prev_heap_end;
  80023f2:	68fb      	ldr	r3, [r7, #12]
-}
  80023f4:	4618      	mov	r0, r3
  80023f6:	3718      	adds	r7, #24
  80023f8:	46bd      	mov	sp, r7
