@@ -3,8 +3,8 @@
 
 #include "stdio.h"
 
-#define EXAMPLE_TX
-//#define EXAMPLE_RX
+//#define EXAMPLE_TX
+#define EXAMPLE_RX
 
 #define MAC_ADDRESS_SIZE 8
 

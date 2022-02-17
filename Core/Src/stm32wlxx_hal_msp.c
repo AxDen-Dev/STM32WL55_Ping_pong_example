@@ -346,6 +346,9 @@ void HAL_SUBGHZ_MspInit(SUBGHZ_HandleTypeDef* hsubghz)
   /* USER CODE END SUBGHZ_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_SUBGHZSPI_CLK_ENABLE();
+    /* SUBGHZ interrupt Init */
+    HAL_NVIC_SetPriority(SUBGHZ_Radio_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(SUBGHZ_Radio_IRQn);
   /* USER CODE BEGIN SUBGHZ_MspInit 1 */
 
   /* USER CODE END SUBGHZ_MspInit 1 */
@@ -365,6 +368,9 @@ void HAL_SUBGHZ_MspDeInit(SUBGHZ_HandleTypeDef* hsubghz)
   /* USER CODE END SUBGHZ_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_SUBGHZSPI_CLK_DISABLE();
+
+    /* SUBGHZ interrupt DeInit */
+    HAL_NVIC_DisableIRQ(SUBGHZ_Radio_IRQn);
   /* USER CODE BEGIN SUBGHZ_MspDeInit 1 */
 
   /* USER CODE END SUBGHZ_MspDeInit 1 */

@@ -49,8 +49,8 @@ typedef enum {
 /* USER CODE BEGIN PD */
 
 #define UART_BUFFER_SIZE 255
-#define RADIO_TX_TIMEOUT_COUNT 600
-#define RADIO_RX_TIMEOUT_COUNT 600
+#define RADIO_TX_TIMEOUT_COUNT 1000
+#define RADIO_RX_TIMEOUT_COUNT 1000
 
 /* USER CODE END PD */
 
@@ -211,10 +211,10 @@ int main(void) {
 
 	/* Create the semaphores(s) */
 	/* creation of radioBinarySem */
-	radioBinarySemHandle = osSemaphoreNew(1, 1, &radioBinarySem_attributes);
+	radioBinarySemHandle = osSemaphoreNew(1, 0, &radioBinarySem_attributes);
 
 	/* creation of mainBinarySem */
-	mainBinarySemHandle = osSemaphoreNew(1, 1, &mainBinarySem_attributes);
+	mainBinarySemHandle = osSemaphoreNew(1, 0, &mainBinarySem_attributes);
 
 	/* USER CODE BEGIN RTOS_SEMAPHORES */
 
@@ -625,6 +625,8 @@ static void MX_GPIO_Init(void) {
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
+#ifdef EXAMPLE_TX
+
 	if (huart->Instance == huart2.Instance) {
 
 		uart_rx_buffer[uart_rx_buffer_size++] = uart_2_data;
@@ -645,6 +647,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		HAL_UART_Receive_IT(&huart2, &uart_2_data, 1);
 
 	}
+
+#endif
 
 }
 
@@ -847,7 +851,7 @@ void StartRadioTask(void *argument) {
 
 		radio_timer_count = 0;
 		radio_state = RADIO_TX_START;
-		MX_SubGhz_Phy_SendPacket(radio_tx_buffer, sizeof(radio_tx_buffer));
+		MX_SubGhz_Phy_SendPacket(radio_tx_buffer, radio_tx_buffer_size);
 
 		osSemaphoreAcquire(radioBinarySemHandle, RADIO_TX_TIMEOUT_COUNT);
 

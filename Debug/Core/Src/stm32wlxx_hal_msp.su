@@ -17,6 +17,6 @@ stm32wlxx_hal_msp.c:263:6:HAL_LPTIM_MspDeInit	16	static
 stm32wlxx_hal_msp.c:285:6:HAL_RTC_MspInit	72	static
 stm32wlxx_hal_msp.c:319:6:HAL_RTC_MspDeInit	16	static
 stm32wlxx_hal_msp.c:342:6:HAL_SUBGHZ_MspInit	16	static
-stm32wlxx_hal_msp.c:361:6:HAL_SUBGHZ_MspDeInit	16	static
-stm32wlxx_hal_msp.c:380:6:HAL_UART_MspInit	96	static
-stm32wlxx_hal_msp.c:466:6:HAL_UART_MspDeInit	16	static
+stm32wlxx_hal_msp.c:364:6:HAL_SUBGHZ_MspDeInit	16	static
+stm32wlxx_hal_msp.c:386:6:HAL_UART_MspInit	96	static
+stm32wlxx_hal_msp.c:472:6:HAL_UART_MspDeInit	16	static

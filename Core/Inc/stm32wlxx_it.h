@@ -55,6 +55,7 @@ void DebugMon_Handler(void);
 void TIM17_IRQHandler(void);
 void USART1_IRQHandler(void);
 void USART2_IRQHandler(void);
+void SUBGHZ_Radio_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
