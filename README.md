@@ -1,6 +1,22 @@
 
 # STM32WL55 LORA Ping pong example
 
+<img src="./asset/STM32WL55_Board.jpg">
+<br>
+
+STM32WL55 카드간 LORA 통신 예제입니다.
+<br>
+
+868 ~ 928Mhz 의 주파수 대역을 사용합니다.
+<br>
+
+30Km 장거리 무선 통신이 가능하며 STM32WL55 SoC 를 사용하여 공간, 저전력, 가격에 장점이 있습니다.
+<br>
+(일반적으로 LROA 통신 시 SX1276 + 별도 MCU 로 구성)
+
+
+-----------------------
+
 ### STM32WL55 LORA Ping pong terminal
 <br>
 
@@ -8,15 +24,23 @@ baudrate : 9600
 <br>
 
 <table>
+<tr align="center">
+  <td>TX</td>
+</tr>
   <tr align="center">
-    <td> </td>
-    <td><img src="./asset/LORA_TX.png"></td>
-  </tr>
-  <tr align="center">
-    <td>RX</td>
-    <td>TX</td>
+    <td><img src="./asset/STM32WL55_TX.png"></td>
   </tr>
 </table>
+
+<table>
+<tr align="center">
+  <td>RX</td>
+</tr>
+  <tr align="center">
+    <td><img src="./asset/STM32WL55_RX.png"></td>
+  </tr>
+</table>
+
 <br>
 
 -----------------------
