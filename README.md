@@ -2,16 +2,7 @@
 # STM32WL55 LORA Ping pong example
 
 <img src="./asset/STM32WL55_Board.jpg">
-<br>
-STM32WL55 카드간 LORA 통신 예제이며, 868 ~ 928Mhz 의 주파수 대역을 사용합니다.
-<br>
-최대 30Km 장거리 무선 통신이 가능하며, 일반적으로 SX1276 + 별도의 MCU를 사용하는 구조대비 공간, 저전력, 가격에 장점이 있습니다.
-<br>
-<br>
-관련 하드웨어 키트는 네이버 스마트 스토어에서 구매 가능합니다.  
-<br>  
 
-[구매링크 : 네이버 스마트 스토어](https://smartstore.naver.com/axden)
 <br>
 <br>
 This is an example of LORA communication between STM32WL55 cards, and the frequency band of 868 ~ 928Mhz is used.
@@ -23,7 +14,8 @@ Related hardware kits can be purchased from the Naver Smart Store.
 <br>
 [Purchase Link : naver smart store](https://smartstore.naver.com/axden)
 <br>
-
+<br>
+You can purchase it by contacting sales@axden.io
 
 -----------------------
 
