@@ -12,9 +12,12 @@ Long-distance wireless communication of up to 30Km is possible, and it has advan
 <br>
 Related hardware kits can be purchased from the Naver Smart Store.
 <br>
+
 [Purchase Link : naver smart store](https://smartstore.naver.com/axden)
+
 <br>
 <br>
+
 You can purchase it by contacting sales@axden.io
 
 -----------------------
