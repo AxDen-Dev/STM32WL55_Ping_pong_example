@@ -3,23 +3,27 @@
 
 <img src="./asset/STM32WL55_Board.jpg">
 <br>
+STM32WL55 카드간 LORA 통신 예제이며, 868 ~ 928Mhz 의 주파수 대역을 사용합니다.
+<br>
+최대 30Km 장거리 무선 통신이 가능하며, 일반적으로 SX1276 + 별도의 MCU를 사용하는 구조대비 공간, 저전력, 가격에 장점이 있습니다.
+<br>
+<br>
+관련 하드웨어 키트는 네이버 스마트 스토어에서 구매 가능합니다.  
+<br>  
 
-STM32WL55 카드간 LORA 통신 예제입니다.
+[구매링크 : 네이버 스마트 스토어](https://smartstore.naver.com/axden)
+<br>
+<br>
+This is an example of LORA communication between STM32WL55 cards, and the frequency band of 868 ~ 928Mhz is used.
+<br>
+Long-distance wireless communication of up to 30Km is possible, and it has advantages in space, low power, and price compared to the structure that generally uses SX1276 + separate MCU.
+<br>
+<br>
+Related hardware kits can be purchased from the Naver Smart Store.
+<br>
+[Purchase Link : naver smart store](https://smartstore.naver.com/axden)
 <br>
 
-868 ~ 928Mhz 의 주파수 대역을 사용합니다.
-<br>
-
-30Km 장거리 무선 통신이 가능하며 STM32WL55 SoC 를 사용하여 공간, 저전력, 가격에 장점이 있습니다.
-<br>
-(일반적으로 LROA 통신 시 SX1276 + 별도 MCU 로 구성)
-<br>
-
-네이버 스마트 스토어에서 구매 가능합니다.
-<br>
-
-[네이버 스마트 스토어](https://smartstore.naver.com/axden)
-<br>
 
 -----------------------
 
